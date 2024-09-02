@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin: 0;
+    background: black;
+    height: 100%;
+}
+
+.conteiner {
+    background: wheat;
+    width: 450px;
+    height: 420px;
+    position: relative;
+    top: 95px;
+    left: 70vh;
+    border-radius: 10px;
+    /*display: flex;
+    flex-direction: row;*/
+}
+
+.time-add {
+    background: red;
+    width: 70px;
+    height: 65px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.time-add:hover {
+    background: white;
+    color: black;
+}
+
+p {
+    margin: 5px 0 0 0;
+
+}
+
+.definite-time {
+    display: flex;
+    justify-content: space-around;
+    height: 55px;
+    margin-top: 40px;
+}
+
+.time-conteiner {
+    background: rgb(255, 0, 0);
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    border:1px solid black;
+    margin-left: calc(73% - 200px);
+    position: relative;
+    top: 30px;
+}
+
+#minutes,#seconds {
+    display: flex;
+    margin-left: 30%;
+    font-weight: 600;
+    font-size: 4rem;
+    margin-left: 64px;
+}
+
+#minutes:hover {
+    color:black;
+} 
+
+#seconds:hover {
+    color:rgb(7, 7, 7);
+}
+
+#minutes {
+    margin-top: 25px;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid;
+    margin-top: 40px;
+    width: 70px;
+}
+
+svg {
+    height: 30px;
+}
+
+.botton-conteiner {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px;
+}
+
+button:hover {
+    background: rgb(133, 133, 133);
+}
+
+@media (max-width: 1000px) {
+    .conteiner {
+        left: 40vh;
+        top: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .conteiner {
+        margin-left: -40vh;
+        margin-top: -35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteiner {
+        margin-left: -67vh;
+    }
+}
+
+@media (max-width: 360px) {
+    .conteiner{
+        left: 70vh;
+        top: 19vh;
+        width: 300px;
+    }
+
+    body {
+        background: rgba(134, 133, 133, 0.863);
+    }
+
+    .time-conteiner {
+        left: 35px;
+    }
+}
+

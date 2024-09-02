@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="conteiner">
+        <div class="time-conteiner">
+            <span id="minutes">00</span>
+            <span id="seconds">00</span>
+        </div>
+        <div class="botton-conteiner">
+            <button onclick="startCounter()"><i data-feather="play"></i></button>
+            <button onclick="pauseCounter()"><i data-feather="pause"></i></button>
+            <button onclick="resetCounter()"><i data-feather="refresh-ccw"></i></button>
+        </div>
+        <div class="definite-time">
+            <div onclick="fiveCounter()" class="time-add">
+                <p>Time</p>
+                <span id="five">15 min</span>
+            </div>
+            <div onclick="quizCounter()" class="time-add">
+                <p>Time</p>
+                <span id="quiz">25 min</span>
+            </div>
+            <div onclick="thirtyCounter()" class="time-add">
+                <p>Time</p>
+                <span id="thirty">35 min</span>
+            </div>
+            <div onclick="fortyCounter()" class="time-add">
+                <p>Time</p>
+                <span id="forty">40 min</span>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

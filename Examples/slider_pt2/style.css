@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+
+/*sempre importante as dimecoes tanto ma parte pai e da filho
+na duvida copia e cola os tamanho e depois vai modificando*/
+.container {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden; /* esconde a bara de navegacão/ barra de rolagem*/
+    position: relative;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    display: flex; /* alinhar ao lado*/
+    overflow-x: auto; /*ele cria uma barra de rolagem dentro do slider*/
+    overflow: hidden; /*tira a barinha de rolagem*/
+    scroll-behavior: smooth; /*suavisa a passagem do slider*/
+}
+
+img {
+    width: 100%;
+    min-width: 100%; /* a img tem que se esforça para esse mino tamanho*/
+    height: 100%;
+    object-fit: cover; /*ele sempre cobre toda o tamanho dado mesmo que a img na cabe */
+}
+
+#previous, #next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    
+    position: absolute;
+    display: flex;
+    justify-content: center; /*configuração do flex*/
+    align-items: center; /*configuração do flex*/
+
+    top: calc(50% - 25px);
+    left: 30px;
+    cursor: pointer; /*o maso fica como a mazinha*/
+}
+
+/*isso fazer com que ele vai para o outro lado da tela*/
+#next {
+    left: unset;
+    right: 30px;
+}

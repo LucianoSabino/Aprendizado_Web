@@ -1,0 +1,97 @@
+:root {
+    --dark-blue: #31455a;
+    --light-blue: #5e6f82;
+    --opacity-dark-blue: #5b748f8a;
+    --menu-height: 45px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--dark-blue);
+    font-family: sans-serif;
+  }
+  
+  .top-menu {
+      background: white;
+      width: 100%;
+      height: var(--menu-height);
+      display: flex;
+      align-items: center;
+
+      svg {
+          padding: 0 15px;
+          border-radius: 1px solid var(--opacity-dark-blue);
+          height: 100%;
+      }
+  }
+
+  .lateral-menu {
+      background: white;
+      width: 0; // ele fica com zerro para ele começa escondido 
+      height: 100vh;
+      animation: menu-close 0.5s;// chamando a animação e colocando a duração
+
+      ul {
+          // aqui quando o menu não ta ativo / mas as configuração fica valendo ainda 
+          visibility: hidden; // ele tira as coisas para nao mostra
+          opacity: 0; //uma transição
+          transition: opacity 0.3s, visibility 0.3s; // quiando um delei para desaparecer suavimente
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+              color: var(--dark-blue);
+              border-top: 1px solid var(--opacity-dark-blue);
+              height: 65px;
+              padding: 0 15px;
+              white-space: nowrap; //ele fais com que o texto não quebere em duas linha quando ele aparece e desaparece 
+
+              &:hover {
+                  color: white;
+                  background: var(--light-blue);
+                  cursor: pointer;
+              }
+
+              svg {
+                  margin-right: 15px;
+
+              }
+          }
+
+          a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+          }
+      }
+      // aqui quando o menu ta ativo
+      &.active { // "&" replica a classe pai não tudo / so as configuração
+          width: 250px; // aqui ele adiciona para mostra
+          animation: menu-open 0.5s; // chamando a animação e colocando a duração
+
+          ul {
+            visibility: visible; // ele mostra as coisas que foi removida 
+            opacity: 1;
+            transition: opacity 0.3s, visibility 0.3s; // quiando um delei para aparecer suavimente
+          }
+      }
+  }
+
+  @keyframes menu-open { // configuração da aminação 
+      from {
+          width: 0;
+      } to {
+          width: 250px;
+      }
+  }
+
+  @keyframes menu-close { // configuração da aminação
+      from{ // inicio
+          width: 250px;
+      } to { // final
+          width: 0;
+      }
+  }

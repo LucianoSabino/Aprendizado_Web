@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li class="item active" data="service">Serviços</li>
+        <li class="item" data="contact">Contato</li>
+        <li class="item" data="info">Informações</li>
+    </ul>
+      
+    <div id="serviceText">
+        <p>Service text</p>
+    </div>
+    <div id="contactText">
+        <p>contact text</p>
+    </div>
+    <div id="infoText">
+        <p>info text</p>
+    </div>
+
+    <script>
+        
+        const serviceText = document.getElementById("serviceText");
+        const contactText = document.getElementById("contactText");
+        const infoText = document.getElementById("infoText");
+        const items = Array.from(document.getElementsByClassName("item")); 
+
+        hideOrShowTextDiv("service");
+
+        items.forEach((item) => {
+        item.addEventListener("click", onItemClick);
+        });
+
+        function onItemClick(event) {
+        const selectedAttribute = event.target.getAttribute("data");
+        addOrRemoveActive(selectedAttribute);
+        hideOrShowTextDiv(selectedAttribute);
+        }
+
+        function hideOrShowTextDiv(selectedAttribute) {
+        hideTextElements();
+
+        if (selectedAttribute === "contact") {
+            contactText.style.display = "block";
+        }
+
+        if (selectedAttribute === "service") {
+            serviceText.style.display = "block";
+        }
+
+        if (selectedAttribute === "info") {
+            infoText.style.display = "block";
+        }
+        }
+
+        function addOrRemoveActive(selectedAttribute) {
+        items.forEach((item) => {
+            const itemAttribute = item.getAttribute("data");
+            if (itemAttribute === selectedAttribute) {
+            item.classList.add("active");
+            return;
+            }
+
+            item.classList.remove("active");
+        });
+        }
+
+        function hideTextElements() {
+        serviceText.style.display = "none";
+        contactText.style.display = "none";
+        infoText.style.display = "none";
+        }
+        
+    </script>
+</body>
+</html>
